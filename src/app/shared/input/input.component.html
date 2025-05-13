@@ -1,0 +1,13 @@
+<label [for]="name">
+    {{ label }} 
+    <span *ngIf="required">*</span>
+</label>
+<input 
+    [type]="type" 
+    [name]="name" 
+    [id]="id" 
+    [value]="value" 
+    [placeholder]="placeholder" 
+    [required]="required"
+    (input)="onInputChange($event)"
+/>

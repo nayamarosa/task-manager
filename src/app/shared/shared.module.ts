@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 
 import { ButtonComponent } from './button/button.component';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
   declarations: [
-    ButtonComponent
+    ButtonComponent,
+    InputComponent
   ],
   imports: [
     CommonModule,
@@ -14,6 +16,7 @@ import { ButtonComponent } from './button/button.component';
   ],
   exports: [
     ButtonComponent,
+    InputComponent,
   ]
 })
 export class SharedModule { }
