@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { TasksRoutingModule } from './tasks-routing.module';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskFormComponent } from './task-form/task-form.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { TaskFormComponent } from './task-form/task-form.component';
     CommonModule,
     MatIconModule,
     TasksRoutingModule,
+    SharedModule,
   ]
 })
 export class TasksModule { }
