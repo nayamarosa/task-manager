@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './task-list.component.scss'
 })
 export class TaskListComponent {
-
+  testClick() {
+    console.log('clicou')
+  }
 }

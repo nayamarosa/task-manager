@@ -6,7 +6,7 @@
                 <p>Descrição</p>
             </div>
             <div>
-                <app-button icon="home" type="icon"></app-button>
+                <mat-icon>home</mat-icon>
                 <p>status</p>
             </div>
             <div>
@@ -14,7 +14,7 @@
                     <input type="checkbox" name="task-done" id="task-done">
                     <label for="task-done">Concluída</label>
                 </form>
-                <app-button icon="home" type="icon" text="lixeira"></app-button>
+                <app-button icon="home" type="icon" (handleClick)="testClick()"></app-button>
             </div>
         </li>
     </ul>
