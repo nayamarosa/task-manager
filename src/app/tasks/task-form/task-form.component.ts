@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-task-form',
@@ -6,8 +7,18 @@ import { Component } from '@angular/core';
   templateUrl: './task-form.component.html',
   styleUrl: './task-form.component.scss'
 })
+
 export class TaskFormComponent {
-  handleValueChange(value: string) {
-    console.log('Digitando', value);
+  newTaskForm: FormGroup;
+
+  constructor(private fb:FormBuilder) {
+    this.newTaskForm = this.fb.group({
+      title: ['', Validators.required],
+      description: [''],
+    })
+  }
+
+  sendFormBtn() {
+    console.log('Formulário válido, enviar:', this.newTaskForm.value);
   }
 }

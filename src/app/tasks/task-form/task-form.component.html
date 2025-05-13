@@ -1,17 +1,22 @@
-<form>
+<form [formGroup]="newTaskForm" (ngSubmit)="sendFormBtn()">
     <app-input
         label="Título"
         name="title"
         id="title"
         placeholder="Título da task"
         [required]="true"
-        (handleChange)="handleValueChange($event)"
+        formControlName="title"
     ></app-input>
     <app-input
         label="Descrição"
         name="description"
         id="description"
         placeholder="Descrição da task"
-        (handleChange)="handleValueChange($event)"
+        formControlName="description"
     ></app-input>
+    <app-button
+        text="Salvar task"
+        (handleClick)="sendFormBtn()"
+        [disabled]="newTaskForm.invalid"
+    ></app-button>
 </form>

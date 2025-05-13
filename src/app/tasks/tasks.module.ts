@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-
 
 import { TasksRoutingModule } from './tasks-routing.module';
 import { TaskListComponent } from './task-list/task-list.component';
@@ -16,6 +16,7 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     MatIconModule,
     TasksRoutingModule,
     SharedModule,
