@@ -3,11 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { TasksRoutingModule } from './tasks-routing.module';
 import { TasksComponent } from './tasks.component';
+import { TaskListComponent } from './task-list/task-list.component';
+import { TaskFormComponent } from './task-form/task-form.component';
 
 
 @NgModule({
   declarations: [
-    TasksComponent
+    TasksComponent,
+    TaskListComponent,
+    TaskFormComponent
   ],
   imports: [
     CommonModule,
