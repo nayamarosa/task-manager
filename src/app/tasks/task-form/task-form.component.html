@@ -1,1 +1,17 @@
-<p>task-form works!</p>
+<form>
+    <app-input
+        label="Título"
+        name="title"
+        id="title"
+        placeholder="Título da task"
+        [required]="true"
+        (handleChange)="handleValueChange($event)"
+    ></app-input>
+    <app-input
+        label="Descrição"
+        name="description"
+        id="description"
+        placeholder="Descrição da task"
+        (handleChange)="handleValueChange($event)"
+    ></app-input>
+</form>

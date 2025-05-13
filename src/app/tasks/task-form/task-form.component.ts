@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './task-form.component.scss'
 })
 export class TaskFormComponent {
-
+  handleValueChange(value: string) {
+    console.log('Digitando', value);
+  }
 }
