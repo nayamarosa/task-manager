@@ -1,0 +1,24 @@
+@use '../../../assets/styles/variables' as *;
+
+.btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &__primary {
+
+    }
+
+    &__icon {
+        color: $text-color;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+.icon {
+
+}

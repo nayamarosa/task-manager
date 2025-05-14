@@ -1,4 +1,4 @@
-<button [ngClass]="type" [disabled]="disabled" (click)="onClick()">
-  <mat-icon *ngIf="icon">{{ icon }}</mat-icon>
+<button [ngClass]="['btn', `btn__${type}`]" [disabled]="disabled" (click)="onClick()">
+  <mat-icon ngClass="icon" *ngIf="icon">{{ icon }}</mat-icon>
   {{ text }}
 </button>
