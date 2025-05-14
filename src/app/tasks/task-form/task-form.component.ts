@@ -12,10 +12,11 @@ import { Task } from '../../models/task.model';
 
 export class TaskFormComponent {
   newTaskForm: FormGroup;
+  recentTasks: [] | undefined;
 
   constructor(
     private fb:FormBuilder,
-    private taskService: TaskService,
+    private taskService: TaskService
   ) {
     this.newTaskForm = this.fb.group({
       title: ['', Validators.required],
@@ -36,5 +37,6 @@ export class TaskFormComponent {
     
     this.taskService.addTask(newTask);
     console.log('Formulário válido, enviar:', this.newTaskForm.value);
+    console.log('service:', this.taskService.getTasks());
   }
 }
