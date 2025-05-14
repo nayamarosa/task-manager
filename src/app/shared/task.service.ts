@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Task } from '../models/task.model';
 
 @Injectable({
@@ -8,12 +8,12 @@ import { Task } from '../models/task.model';
 
 export class TaskService {
   private tasksSubject = new BehaviorSubject<Task[]>([]);
-  public tasks$ = this.tasksSubject.asObservable();
 
   constructor() { }
 
-  getTasks(): Task[] {
-    return this.tasksSubject.value;
+  getTasks(): Observable<Task[]> {
+    console.log('get', this.tasksSubject.value)
+    return this.tasksSubject.asObservable();
   }
 
   addTask(task: Task): void {
