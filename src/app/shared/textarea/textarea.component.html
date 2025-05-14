@@ -1,0 +1,15 @@
+<div class="textarea">
+    <label [for]="name" class="textarea__label">
+        {{ label }} 
+        <span *ngIf="required" class="textarea__label--span">*Campo obrigatório</span>
+    </label>
+    <textarea 
+        class="textarea__input-area"
+        [name]="name" 
+        [id]="id" 
+        [value]="value" 
+        [placeholder]="placeholder" 
+        [required]="required"
+        (input)="onInputChange($event)"
+    ></textarea>
+</div>
