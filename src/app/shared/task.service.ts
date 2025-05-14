@@ -21,7 +21,6 @@ export class TaskService {
   }
 
   getTasks(): Observable<Task[]> {
-    console.log('get', this.tasksSubject.value)
     return this.tasksSubject.asObservable();
   }
 
@@ -29,14 +28,12 @@ export class TaskService {
     const add = [...this.tasksSubject.value, task];
     this.tasksSubject.next(add);
     this.updateLocalTasks(add);
-    console.log('add', add)
   }
 
   deleteTask(id: number): void {
     const remove = this.tasksSubject.value.filter(task => task.id !== id);
     this.tasksSubject.next(remove);
     this.updateLocalTasks(remove);
-
   }
 
   toggleTaskStatus(id: number): void {
