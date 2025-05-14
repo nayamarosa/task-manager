@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Task } from '../../models/task.model';
 import { TaskService } from '../../shared/task.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-list',
@@ -16,7 +17,8 @@ export class TaskListComponent implements OnInit {
 
   constructor(
     private fb:FormBuilder,
-    private taskService: TaskService
+    private taskService: TaskService,
+    private router: Router,
   ) {
     this.statusForm = this.fb.group({
       status: [false],
@@ -35,5 +37,9 @@ export class TaskListComponent implements OnInit {
 
   removeTask(id: number): void {
     this.taskService.deleteTask(id);
+  }
+
+  addNewTaskBtn() {
+    this.router.navigate(['/tasks/new']);
   }
 }
