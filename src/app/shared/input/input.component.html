@@ -1,14 +1,17 @@
-<label [for]="name">
-    {{ label }} 
-    <span *ngIf="required">*Campo obrigatório</span>
-</label>
-<input 
-    [type]="type" 
-    [name]="name" 
-    [id]="id" 
-    [value]="value" 
-    [placeholder]="placeholder" 
-    [required]="required"
-    [checked]="checked"
-    (input)="onInputChange($event)"
-/>
+<div class="input">
+    <label [for]="name" class="input__label">
+        {{ label }} 
+        <span *ngIf="required" class="input__label--span">*Campo obrigatório</span>
+    </label>
+    <input 
+        class="input__input-area"
+        [type]="type" 
+        [name]="name" 
+        [id]="id" 
+        [value]="value" 
+        [placeholder]="placeholder" 
+        [required]="required"
+        [checked]="checked"
+        (input)="onInputChange($event)"
+    />
+</div>

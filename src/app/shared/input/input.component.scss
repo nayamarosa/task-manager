@@ -1,0 +1,28 @@
+@use '../../../assets/styles/variables' as *;
+
+.input {
+    margin: 0 0 16px;
+    display: flex;
+    flex-direction: column;
+    
+    &__label {
+        margin: 0 0 4px;
+        font-size: 20px;
+        font-weight: 600;
+        
+        &--span {
+            font-size: 12px;
+            font-weight: 400;
+            color: red;
+        }
+    }
+
+    &__input-area {
+        padding: 4px 0;
+        font-family: $font-family;
+        font-size: $font-size-normal;
+        color: $text-color;
+        border: 0;
+        border-bottom: 1px solid $primary-color;
+    }
+}
