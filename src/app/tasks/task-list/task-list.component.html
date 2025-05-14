@@ -1,12 +1,12 @@
 <section>
-    <ul>
-        <li *ngFor="let task of taskList">
-            <div>
+    <ul class="task-list">
+        <li *ngFor="let task of taskList" class="task-list__item">
+            <div class="task-list__item-text">
                 <h2>{{ task.title }}</h2>
                 <p>{{ task.description }}</p>
             </div>
-            <div>
-                <form [formGroup]="statusForm">
+            <div class="task-list__item-actions">
+                <form class="task-list__item-status" [formGroup]="statusForm">
                     <app-input
                         [label]="task.completed ? 'Concluída' : 'Pendente'"
                         type="checkbox"
@@ -17,7 +17,12 @@
                         (change)="toggleStatus(task.id)"
                     ></app-input>
                 </form>
-                <app-button icon="delete" type="icon" (handleClick)="removeTask(task.id)"></app-button>
+            <app-button 
+                class="task-list__item-delete" 
+                icon="delete" 
+                type="icon" 
+                (handleClick)="removeTask(task.id)"
+            ></app-button>
             </div>
         </li>
     </ul>

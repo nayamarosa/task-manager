@@ -1,0 +1,25 @@
+.task-list {
+
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-text {
+
+        }
+
+        &-actions {
+            display: flex;
+        }
+
+        &-status {
+
+        }
+
+        &-delete {
+
+        }
+    }
+}
