@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TaskService } from '../../shared/task.service';
 import { Task } from '../../models/task.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-form',
@@ -16,7 +17,8 @@ export class TaskFormComponent {
 
   constructor(
     private fb:FormBuilder,
-    private taskService: TaskService
+    private taskService: TaskService,
+    private router: Router,
   ) {
     this.newTaskForm = this.fb.group({
       title: ['', Validators.required],
@@ -38,5 +40,9 @@ export class TaskFormComponent {
     this.taskService.addTask(newTask);
     console.log('Formulário válido, enviar:', this.newTaskForm.value);
     console.log('service:', this.taskService.getTasks());
+  }
+
+  backTasksListBtn() {
+    this.router.navigate(['/tasks']);
   }
 }

@@ -1,15 +1,47 @@
 @use '../../../assets/styles/variables' as *;
 
 .btn {
+    padding: 12px;
+    font-size: 18px;
+    // font-weight: 600;
     background-color: transparent;
     border: none;
     cursor: pointer;
 
     &__primary {
+        color: $text-white;
+        background-color: $primary-color;
+        border-radius: 8px;
 
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: $secondary-color;
+        }
+
+        &:disabled,
+        &:disabled:hover {
+            background-color: lighten($color: $primary-color, $amount: 30);
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    }
+
+    &__secondary {
+        color: $primary-color;
+        border: 1px solid $primary-color;
+        border-radius: 8px;
+
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: $secondary-color;
+            border: 1px solid $secondary-color;
+        }
     }
 
     &__icon {
+        padding: 0;
         color: $text-color;
         transition: all 0.3s ease-in-out;
 

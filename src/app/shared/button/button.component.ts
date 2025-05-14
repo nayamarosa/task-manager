@@ -11,7 +11,7 @@ export class ButtonComponent {
   @Input() text: string = '';
   @Input() icon: string = '';
   @Input() disabled: boolean = false;
-  @Input() type: 'primary' | 'icon' | '' = 'primary';
+  @Input() type: 'primary' | 'secondary' | 'icon' | '' = 'primary';
 
   @Output() handleClick = new EventEmitter<void>();
 
