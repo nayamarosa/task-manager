@@ -38,8 +38,11 @@ export class TaskFormComponent {
     };
     
     this.taskService.addTask(newTask);
-    console.log('Formulário válido, enviar:', this.newTaskForm.value);
-    console.log('service:', this.taskService.getTasks());
+
+    this.newTaskForm.reset({
+      title: '',
+      description: ''
+    });
   }
 
   backTasksListBtn() {
