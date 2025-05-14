@@ -14,10 +14,16 @@
         placeholder="Descrição da task"
         formControlName="description"
     ></app-input>
-    <app-button
-        text="Salvar task"
-        [disabled]="newTaskForm.invalid"
-    ></app-button>
+    <div class="task-form__btn">
+        <app-button
+            text="Salvar task"
+            [disabled]="newTaskForm.invalid"
+        ></app-button>
+        <div *ngIf="successMessage" class="task-form__success-message">
+            <mat-icon>check_circle</mat-icon>
+            {{ successMessage }}
+        </div>
+    </div>
 </form>
 
 <app-button

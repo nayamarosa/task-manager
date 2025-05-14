@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 
 export class TaskFormComponent {
   newTaskForm: FormGroup;
-  recentTasks: [] | undefined;
+  successMessage: string = '';
 
   constructor(
     private fb:FormBuilder,
@@ -43,6 +43,12 @@ export class TaskFormComponent {
       title: '',
       description: ''
     });
+
+    this.successMessage = 'Tarefa adicionada';
+
+    setTimeout(() => {
+      this.successMessage = '';
+    }, 3000);
   }
 
   backTasksListBtn() {

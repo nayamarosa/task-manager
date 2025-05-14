@@ -1,0 +1,25 @@
+@use '../../../assets/styles/variables' as *;
+
+.task-form {
+
+    &__btn {
+        display: flex;
+        align-items: center;
+    }
+
+    &__success-message {
+        margin: 0 0 0 12px;
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      color: $secondary-color;
+      opacity: 1;
+      animation: fadeOut 0.5s ease-in-out 2.5s forwards;
+    }    
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
