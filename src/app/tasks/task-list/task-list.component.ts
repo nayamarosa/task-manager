@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Task } from '../../models/task.model';
+import { TaskService } from '../../shared/task.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-task-list',
@@ -6,8 +9,28 @@ import { Component } from '@angular/core';
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.scss'
 })
-export class TaskListComponent {
-  testClick() {
-    console.log('clicou')
+
+export class TaskListComponent implements OnInit {
+  statusForm: FormGroup;
+  taskList: Task[] = [];
+
+  constructor(
+    private fb:FormBuilder,
+    private taskService: TaskService
+  ) {
+    this.statusForm = this.fb.group({
+      status: [false],
+    })
+  }
+
+  ngOnInit(): void {
+    this.taskService.getTasks().subscribe((tasks) => {
+      console.log('taskList', tasks);
+      this.taskList = tasks;
+    });
+   }
+
+  removeTask(id: number): void {
+    this.taskService.deleteTask(id);
   }
 }
