@@ -6,6 +6,7 @@
     flex-direction: column;
     
     &:has(> input[type="checkbox"]) {
+        margin: 0;
         flex-direction: row;
         align-items: center;
     }
@@ -14,6 +15,11 @@
         margin: 0 0 4px;
         font-size: $font-size-normal;
         font-weight: 600;
+
+        &:has(~ input[type="checkbox"]) {
+            margin: 0 4px 0 0;
+            font-weight: 400;
+        }
         
         &--span {
             font-size: 12px;

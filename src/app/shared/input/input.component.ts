@@ -42,11 +42,6 @@ export class InputComponent implements ControlValueAccessor {
     this.onTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-    this.disabled = isDisabled;
-  }
-
-
   onInputChange(event: Event) {
     const newValue = (event.target as HTMLInputElement).value;
     this.value = newValue;

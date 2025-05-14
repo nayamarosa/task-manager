@@ -1,25 +1,31 @@
+@use '../../../assets/styles/variables' as *;
+
 .task-list {
 
-
     &__item {
+        margin-bottom: 4px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        min-height: 48px;
 
         &-text {
-
+            & h2 {
+                font-size: 20px;
+            }
         }
 
         &-actions {
             display: flex;
+            align-items: center;
         }
 
-        &-status {
-
+        &--doing {
+            background-color: lighten($color: $primary-color, $amount: 40);
         }
 
-        &-delete {
-
+        &--done {
+            background-color: lighten($color: $secondary-color, $amount: 60);
         }
     }
 }
