@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TaskFormComponent } from './task-form.component';
+import { ButtonComponent } from '../../shared/button/button.component';
+import { InputComponent } from '../../shared/input/input.component';
+import { TextareaComponent } from '../../shared/textarea/textarea.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('TaskFormComponent', () => {
   let component: TaskFormComponent;
@@ -8,7 +12,8 @@ describe('TaskFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TaskFormComponent]
+      declarations: [TaskFormComponent, ButtonComponent, InputComponent, TextareaComponent],
+      imports: [ReactiveFormsModule],
     })
     .compileComponents();
 
