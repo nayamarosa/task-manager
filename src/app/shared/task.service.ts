@@ -19,6 +19,7 @@ export class TaskService {
   addTask(task: Task): void {
     const add = [...this.tasksSubject.value, task];
     this.tasksSubject.next(add);
+    console.log('add', add)
   }
 
   deleteTask(id: number): void {
