@@ -28,7 +28,11 @@ export class TaskListComponent implements OnInit {
       console.log('taskList', tasks);
       this.taskList = tasks;
     });
-   }
+  }
+
+  toggleStatus(id: number): void {
+    this.taskService.toggleTaskStatus(id);
+  }
 
   removeTask(id: number): void {
     this.taskService.deleteTask(id);

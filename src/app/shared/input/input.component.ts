@@ -23,6 +23,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input() placeholder: string = '';
   @Input() required: boolean = false;
   @Input() disabled: boolean = false;
+  @Input() checked: boolean = false;
 
   value: string = '';
 

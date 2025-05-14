@@ -8,11 +8,13 @@
             <div>
                 <form [formGroup]="statusForm">
                     <app-input
-                        [label]="statusForm.status ? 'Pendente' : 'Concluída'"
+                        [label]="task.completed ? 'Concluída' : 'Pendente'"
                         type="checkbox"
                         name="status"
                         id="status"
+                        [checked]="task.completed"
                         formControlName="status"
+                        (change)="toggleStatus(task.id)"
                     ></app-input>
                 </form>
                 <app-button icon="delete" type="icon" (handleClick)="removeTask(task.id)"></app-button>
