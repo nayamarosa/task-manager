@@ -1,3 +1,4 @@
+<app-header pagename="Lista de Tarefas"></app-header>
 <section>
     <ul class="task-list">
         <li *ngFor="let task of taskList" [ngClass]="['task-list__item', task.completed ? 'task-list__item--done' : 'task-list__item--doing']">

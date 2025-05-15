@@ -1,7 +1,8 @@
 @use '../../../assets/styles/variables' as *;
 
 .task-form {
-
+  width: 100%;
+  margin-bottom: 24px;
     &__btn {
         display: flex;
         align-items: center;

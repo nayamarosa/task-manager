@@ -1,31 +1,53 @@
+@use 'sass:color';
 @use '../../../assets/styles/variables' as *;
 
 .task-list {
+  margin-bottom: 24px;
+  &__item {
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 8px;
+    border-radius: 6px;
 
-    &__item {
-        margin-bottom: 4px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 48px;
+    background-color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 
-        &-text {
-            & h2 {
-                font-size: 20px;
-            }
-        }
-
-        &-actions {
-            display: flex;
-            align-items: center;
-        }
-
-        &--doing {
-            background-color: lighten($color: $primary-color, $amount: 40);
-        }
-
-        &--done {
-            background-color: lighten($color: $secondary-color, $amount: 60);
-        }
+    &-text {
+      h2 {
+        font-size: 20px;
+      }
     }
+
+    &-actions {
+      display: flex;
+      align-items: center;
+    }
+
+    &--doing {
+
+      background-color:color.adjust($primary-color, $lightness: 40%);
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: mix(white, $primary-color, 30%);
+      }
+    }
+
+    &--done {
+      transition: background-color 0.3s ease;
+      background-color:color.adjust($secondary-color, $lightness: 60%);
+
+
+      &:hover {
+        background-color: mix(white, $secondary-color, 50%);
+      }
+    }
+
+    &:hover:not(&--doing):not(&--done) {
+      background-color: #f2f2f2;
+    }
+  }
 }

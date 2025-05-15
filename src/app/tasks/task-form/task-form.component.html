@@ -1,4 +1,6 @@
-<form [formGroup]="newTaskForm" (ngSubmit)="addTaskBtn()">
+
+<app-header pagename="Criar Task"></app-header>
+<form [formGroup]="newTaskForm" (ngSubmit)="addTaskBtn()" class="task-form">
     <app-input
         label="Título"
         name="title"

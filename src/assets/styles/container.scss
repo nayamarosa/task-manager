@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  box-sizing: border-box;
+
+
+  padding: 1rem;
+  margin: 24px auto;
+  max-width: 100%;
+
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  @media (min-width: 768px) {
+    padding: 2rem 4rem;
+    max-width: 800px;
+  }
+}
