@@ -12,7 +12,7 @@
                         [label]="task.completed ? 'Concluída' : 'Pendente'"
                         type="checkbox"
                         name="status"
-                        id="status"
+                        [id]="`task-${task.id.toString()}`"
                         [checked]="task.completed"
                         formControlName="status"
                         (change)="toggleStatus(task.id)"
