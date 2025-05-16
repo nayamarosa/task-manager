@@ -1,59 +1,109 @@
-# TaskManager
+# 📝 Desafio Prático - Gerenciador de Tarefas (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
+Este projeto foi desenvolvido como parte de um desafio técnico. Trata-se de um **gerenciador de tarefas** construído com **Angular**, utilizando **componentização**, **formulários reativos**, **serviços** e **persistência via localStorage**.
 
-## Development server
+---
 
-To start a local development server, run:
+## ✅ Funcionalidades Implementadas
+
+📋 **Listagem de Tarefas** (`/tasks`)
+  - Exibe tarefas cadastradas.
+  - Permite marcar como concluída.
+  - Permite excluir uma tarefa.
+
+➕ **Criação de Tarefa** (`/tasks/new`)
+  - Formulário reativo com validação.
+  - Mostra mensagem de sucesso após salvar.
+
+💾 **Persistência com localStorage**
+  - As tarefas são salvas localmente para manter o estado entre sessões.
+
+🧩 **Arquitetura Modular**
+  - Separação por módulos (`tasks`, `home`, `shared`).
+
+---
+
+## 🧪 Testes Unitários
+
+O projeto possui testes unitários implementados para garantir a confiabilidade dos principais serviços e componentes.
+
+### ✔️ Testado:
+
+#### **🔹 TaskService**
+- Criação do serviço.
+- Adição de uma nova tarefa.
+- Exclusão de uma tarefa.
+- Alternância do status de conclusão (`completed`).
+- Verificação do estado inicial (lista vazia).
+
+#### **🔹 TaskListComponent**
+- Criação do componente.
+- Renderização correta da lista de tarefas.
+- Chamadas aos métodos `toggleTaskStatus` e `deleteTask`.
+- Navegação para `tasks/new`.
+
+### ▶️ Rodar os testes:
+
+```bash
+ng test
+
+```
+
+---
+
+## 🚀 **Como Rodar a Aplicação**
+
+### **1.** Clone o repositório:
+
+```bash
+git clone https://github.com/nayamarosa/task-manager.git
+cd task-manager
+```
+
+### **2.** Instale as dependências:
+
+```bash
+npm install
+```
+
+### **3.** Rode o servidor local:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse em: http://localhost:4200
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 🛠️ Ferramentas Utilizadas
+- Angular 17+
+- TypeScript
+- SCSS
+- Angular CLI
+- Jasmine & Karma (testes)
+- Reactive Forms
+- localStorage
 
-```bash
-ng generate component component-name
+## 📂 Estrutura do Projeto (simplificada)
+
+```java
+src/
+├── app/
+│   ├── home/            → módulo inicial (rota '/')
+│   ├── tasks/           → funcionalidades de tarefas
+|   |    ├── task-form           → formulário de nova tarefa (rota '/tasks/new')
+|   |    ├── task-list           → listagem de tarefas (rota '/tasks')
+│   ├── shared/          → reutilizáveis
+|   |    ├── input              → componente
+|   |    ├── textarea           → componente
+|   |    ├── button             → componente
+|   |    ├── header             → componente
+|   |    ├── task.service       → serviço
+│   └── app-routing.module.ts
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 🤝 Autor
+Desenvolvido por **Nayama Rosa**.
