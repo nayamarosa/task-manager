@@ -3,8 +3,8 @@
 <form [formGroup]="newTaskForm" (ngSubmit)="addTaskBtn()" class="task-form">
     <app-input
         label="Título"
-        name="title"
-        id="title"
+        name="title-new-task"
+        id="title-new-task"
         placeholder="Título da task"
         [required]="true"
         formControlName="title"

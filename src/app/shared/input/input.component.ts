@@ -48,4 +48,11 @@ export class InputComponent implements ControlValueAccessor {
     this.onChange(newValue);
     this.onTouched();
   }
+  
+  onCheckboxChange(event: Event) {
+    const newValue = (event.target as HTMLInputElement).checked;
+    this.checked = newValue;
+    this.onChange(newValue);
+    this.onTouched();
+  }
 }
